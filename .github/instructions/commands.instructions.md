@@ -16,8 +16,8 @@ When the user sends one of these commands, normalize it case-insensitively and f
 ### Git And Branches
 
 - `C`: inspect, validate, stage, and commit the intended current changes.
-- `CP`: perform the `C` workflow, then push the current branch to its upstream remote.
-- `P`: push the current branch to its upstream remote without committing or modifying files.
+- `CP`: perform the `C` workflow, then push the current non-`main` branch to its upstream remote. Refuse before staging or committing if the current branch is `main`.
+- `P`: push the current non-`main` branch to its upstream remote without committing or modifying files. Refuse if the current branch is `main`.
 - `CB {name}`: create a new git branch from the current `HEAD` without committing, pushing, or discarding uncommitted changes.
 - `SLC`: summarize the latest changes on the current branch relative to its upstream or base branch without modifying the worktree.
 
@@ -55,6 +55,7 @@ When the user sends one of these commands, normalize it case-insensitively and f
 - Do not commit, push, or modify files for `G`, `WN`, `PRD`, or `SLC`.
 - Do not commit or push for `FF` unless explicitly requested.
 - Do not create a duplicate pull request for `CPR`.
+- Never push the `main` branch. For `CP`, refuse before staging or committing when on `main`; for `P`, refuse before pushing. Use a feature branch and a pull request instead.
 - Never force-push, reset hard, discard user changes, or rebase as part of a command.
 - If the worktree is clean, do not create an empty commit.
 - Preserve unrelated staged and unstaged changes.

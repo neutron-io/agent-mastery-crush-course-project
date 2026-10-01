@@ -27,6 +27,60 @@
       "sourceType": "github",
       "skillPath": "skills/incremental-planning/SKILL.md",
       "computedHash": "0edcd9f57abf73bd33565ff42b6805eaeb84a6d13530326bab0dad4885a40574"
+    },
+    "clean-code": {
+      "source": "neutron-io/agentics",
+      "sourceType": "github",
+      "skillPath": "skills/clean-code/SKILL.md",
+      "computedHash": "8f4903dafc8e60184a06f43b05f216ce6f05227e8686140a9108ef0947c0949c"
+    },
+    "code-change": {
+      "source": "neutron-io/agentics",
+      "sourceType": "github",
+      "skillPath": "skills/code-change/SKILL.md",
+      "computedHash": "f0bce2e2edf18da33f755f9a1db1252e1e5bf2536fba352a0f131f2ce1e2ecf7"
+    },
+    "e2e-testing": {
+      "source": "neutron-io/agentics",
+      "sourceType": "github",
+      "skillPath": "skills/e2e-testing/SKILL.md",
+      "computedHash": "106408609ebf16ce139b08db4be976fb4eb8e963dda416c4510ae82fb9150726"
+    },
+    "e2e-testing-cypress": {
+      "source": "neutron-io/agentics",
+      "sourceType": "github",
+      "skillPath": "skills/e2e-testing-cypress/SKILL.md",
+      "computedHash": "18493ade2a8fc44f1a21cd84657dcffb311c2e6883e9c746a73455b2d8279acb"
+    },
+    "formatting": {
+      "source": "neutron-io/agentics",
+      "sourceType": "github",
+      "skillPath": "skills/formatting/SKILL.md",
+      "computedHash": "1cc11f1520cb25ccbe7cfb820f08f5b63bc35b4f36e097eed4a9815feeb9e2b4"
+    },
+    "functional-coding-style": {
+      "source": "neutron-io/agentics",
+      "sourceType": "github",
+      "skillPath": "skills/functional-coding-style/SKILL.md",
+      "computedHash": "d6bf89ccdf2b5950e40f7e6741170fb469283938e0b001f4163e4d7bfc660c57"
+    },
+    "github-review-comments": {
+      "source": "neutron-io/agentics",
+      "sourceType": "github",
+      "skillPath": "skills/github-review-comments/SKILL.md",
+      "computedHash": "28747c1d094acd199d43a648082ab35857e41713f839f904cf4b7473221627ff"
+    },
+    "service-function": {
+      "source": "neutron-io/agentics",
+      "sourceType": "github",
+      "skillPath": "skills/service-function/SKILL.md",
+      "computedHash": "9416e4956cd2276b1342e1048ad4723e5b82578462132981d05e1eaa95a6cfd2"
+    },
+    "util-function": {
+      "source": "neutron-io/agentics",
+      "sourceType": "github",
+      "skillPath": "skills/util-function/SKILL.md",
+      "computedHash": "31bc870ebaf61a319e40f20b8ab3f999f57a220137d7228d17c31f35ea2c2aed"
     }
   },
   "prompts": {

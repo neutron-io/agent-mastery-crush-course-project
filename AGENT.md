@@ -385,6 +385,8 @@ Testing should be treated as part of the change, not an afterthought.
 ## Git And Planning
 
 - inspect the existing worktree before editing
+- never push the `main` branch; refuse `CP` before staging or committing and refuse `P` before pushing when currently on `main`
+- use a feature branch and pull request for changes intended for `main`
 - do not revert unrelated user changes
 - for non-trivial work, write down a short plan before large edits
 - keep plan files in a dedicated folder if the repo uses them
