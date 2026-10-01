@@ -4,7 +4,10 @@
 
 - [Bring an Idea](#bring-an-idea)
 - [Development Workflow](#development-workflow)
-- [Initial prompt example](#initial-prompt-example)
+- [Course Session Planner | Initial webapp prompt example](#course-session-planner--initial-webapp-prompt-example)
+- [Agent File Organizer | Initial desktop app prompt example](#agent-file-organizer--initial-desktop-app-prompt-example)
+- [Workspace Plan Assistant | Initial VS Code extension prompt example](#workspace-plan-assistant--initial-vs-code-extension-prompt-example)
+- [Batch File Renamer | Initial CLI prompt example](#batch-file-renamer--initial-cli-prompt-example)
 
 Join us to build a greenfield project from scratch and learn how to use and refine the instructions, skills, and prompts prepared for the workshop.
 
@@ -31,7 +34,7 @@ Feel free to share your idea and discuss its scope. No detailed preparation is n
 	- Tech stack
 	- Business description of the core logic and features
 
-[See example](#initial-prompt-example)
+[See example](#course-session-planner--initial-webapp-prompt-example)
 
 - Generate plan files
 - Generate implementation files
@@ -40,7 +43,7 @@ Feel free to share your idea and discuss its scope. No detailed preparation is n
 	- Phase 2: refine the changes, approve them, then commit and push
 	- Repeat the cycle for subsequent phases
 
-## Initial prompt example
+## Course Session Planner | Initial webapp prompt example
 
 ```text
 Create a responsive course-session planning web app for small teams that run internal workshops.
@@ -65,6 +68,91 @@ Core features:
 Scope and first steps:
 - Store data locally; do not add accounts or a backend
 - Make the interface responsive and accessible
+
+-------
+Start with generating plans files
+```
+
+## Agent File Organizer | Initial desktop app prompt example
+
+```text
+Create a desktop MVP that uses an AI agent to help people organize files in a folder they select. Design it to support future iOS, Android, and web app clients.
+
+Purpose:
+- Suggest a useful folder structure and file organization while keeping the user in control.
+
+Tech stack:
+- Electron with React and Vite
+- 100% TypeScript
+- ESLint and Prettier
+- Vitest for unit tests
+- Storybook for reusable UI components
+
+Core features:
+- Let the user choose a folder with the native folder picker
+- Use file names, types, and dates to suggest groups without reading file contents
+- Show the agent's proposed moves and any name conflicts before applying changes
+- Apply changes only after explicit approval, and support undoing the last operation
+
+Scope and safety:
+- Keep core logic platform-independent and isolate platform-specific UI and file-system access so future clients can reuse it; build only the desktop app for now
+- Limit file access to the folder selected by the user; do not upload files
+- Never modify files before the user approves the preview
+
+-------
+Start with generating plans files
+```
+
+## Workspace Plan Assistant | Initial VS Code extension prompt example
+
+```text
+Create a VS Code extension that lets the integrated Copilot agent use a focused workspace-planning tool.
+
+Purpose:
+- Help developers turn a task into a reviewable implementation plan from inside VS Code.
+
+Tech stack:
+- TypeScript and the VS Code Extension API
+- The supported VS Code Language Model Tools API for tools available to the integrated agent
+- ESLint, Prettier, and Vitest for unit tests
+
+Core features:
+- Register a tool the agent can use to draft a plan from the user's task and relevant workspace context
+- Show the proposed plan before writing it to the workspace
+- Save an approved plan under agent/plans/ and report the created file to the user
+
+Scope and safety:
+- Start with plan generation only; do not let the extension edit application source files
+- Read only relevant files in the active workspace and require approval before writing
+- Do not add a separate chat UI or connect to an external model provider
+
+-------
+Start with generating plans files
+```
+
+## Batch File Renamer | Initial CLI prompt example
+
+```text
+Create a Python CLI that safely renames files in a user-selected directory using a prefix and sequential numbering.
+
+Purpose:
+- Make repetitive file renaming quick, predictable, and reversible to review before changes are made.
+
+Tech stack:
+- Python 3.12+
+- argparse for command-line argument parsing
+- pytest for tests
+- Ruff for linting and formatting
+
+Core features:
+- Accept a directory, filename prefix, and optional starting number
+- Print a preview mapping each current filename to its proposed name
+- Apply the rename only when the user passes an explicit apply option
+- Detect name collisions and never overwrite existing files
+
+Scope and safety:
+- Operate only on files directly in the specified directory
+- Keep preview as the default and return a nonzero exit code if a rename cannot be completed safely
 
 -------
 Start with generating plans files
