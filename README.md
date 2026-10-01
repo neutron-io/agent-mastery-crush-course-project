@@ -4,11 +4,13 @@
 
 - [Bring an Idea](#bring-an-idea)
 - [Development Workflow](#development-workflow)
-- [Course Session Planner | Initial webapp prompt example](#course-session-planner--initial-webapp-prompt-example)
-- [Agent File Organizer | Initial desktop app prompt example](#agent-file-organizer--initial-desktop-app-prompt-example)
-- [Workspace Plan Assistant | Initial VS Code extension prompt example](#workspace-plan-assistant--initial-vs-code-extension-prompt-example)
-- [Batch File Renamer | Initial CLI prompt example](#batch-file-renamer--initial-cli-prompt-example)
-- [Course Session Planner | Guided initial prompt example](#course-session-planner--guided-initial-prompt-example)
+- [Initial prompts examples](#initial-prompts-examples)
+	- [Course Session Planner | Initial webapp prompt example](#course-session-planner--initial-webapp-prompt-example)
+	- [Figma Product Brief | Initial prompt for a designer and product manager](#figma-product-brief--initial-prompt-for-a-designer-and-product-manager)
+	- [Agent File Organizer | Initial desktop app prompt example](#agent-file-organizer--initial-desktop-app-prompt-example)
+	- [Workspace Plan Assistant | Initial VS Code extension prompt example](#workspace-plan-assistant--initial-vs-code-extension-prompt-example)
+	- [Batch File Renamer | Initial CLI prompt example](#batch-file-renamer--initial-cli-prompt-example)
+	- [Course Session Planner | Guided initial prompts example](#course-session-planner--guided-initial-prompts-example)
 
 Join us to build a greenfield project from scratch and learn how to use and refine the instructions, skills, and prompts prepared for the workshop.
 
@@ -35,7 +37,7 @@ Feel free to share your idea and discuss its scope. No detailed preparation is n
 	- Tech stack
 	- Business description of the core logic and features
 
-[See example](#course-session-planner--initial-webapp-prompt-example)
+	[🧭 See initial prompts examples](#initial-prompts-examples)
 
 - Generate plan files
 - Generate implementation files
@@ -44,7 +46,9 @@ Feel free to share your idea and discuss its scope. No detailed preparation is n
 	- Phase 2: refine the changes, approve them, then commit and push
 	- Repeat the cycle for subsequent phases
 
-## Course Session Planner | Initial webapp prompt example
+## Initial prompts examples
+
+### Course Session Planner | Initial webapp prompt example
 
 ```text
 Create a responsive course-session planning web app for small teams that run internal workshops.
@@ -57,6 +61,7 @@ Tech stack:
 - 100% TypeScript
 - ESLint
 - Prettier
+- Supabase for PostgreSQL and authentication
 - Vitest for unit tests of business logic
 - Cypress for end-to-end tests of key user workflows
 - Storybook to document reusable UI components and their states
@@ -67,15 +72,37 @@ Core features:
 - Browse upcoming sessions and filter them by topic
 
 Scope and first steps:
-- Authentication: Not required; this is a single-user app with no accounts or sign-in
-- Store data locally; do not add accounts or a backend
+- Authentication: Required; organizers sign in to access shared workshop data
+- Store workshop and session data in Supabase PostgreSQL; do not use browser-local storage as the source of truth
+- Keep the MVP to one shared workspace; defer invitations and role management
 - Make the interface responsive and accessible
 
 -------
 Start with generating plans files
 ```
 
-## Agent File Organizer | Initial desktop app prompt example
+### Figma Product Brief | Initial prompt for a designer and product manager
+
+```text
+I'm a product manager and product designer. I work mostly in Figma and am new to turning designs into working software. Help me shape a small, useful web app from my product idea and design materials.
+
+My product idea:
+- [Describe the problem, intended users, and desired outcome]
+
+My Figma materials:
+- [Paste a link, attach screenshots, or describe the prototype]
+
+Work with me in plain language:
+- Ask one focused question at a time about users, goals, workflows, constraints, and what belongs in the MVP
+- Treat Figma as a design reference, not a complete specification; if you cannot access a link, ask me for screenshots or exports, and do not invent unseen screens or behavior
+- Help identify missing user flows, product rules, responsive layouts, and loading, empty, and error states
+- Once requirements are clear, compare suitable technology and hosting or database options, including currently verified free tiers where available; explain tradeoffs without choosing for me
+- Ask me to decide about authentication, data storage, and other major product choices before finalizing recommendations
+
+After we agree on the product direction, draft a concise product brief and initial project prompt for my approval. Do not write code or begin implementation. After I approve the prompt, start with generating plans files, then wait for my approval before implementation.
+```
+
+### Agent File Organizer | Initial desktop app prompt example
 
 ```text
 Create a desktop MVP that helps people organize files in a folder they select. Design it to support future iOS, Android, and web app clients.
@@ -107,7 +134,7 @@ Scope and safety:
 Start with generating plans files
 ```
 
-## Workspace Plan Assistant | Initial VS Code extension prompt example
+### Workspace Plan Assistant | Initial VS Code extension prompt example
 
 ```text
 Create a VS Code extension that lets the integrated Copilot agent use a focused workspace-planning tool.
@@ -135,7 +162,7 @@ Scope and safety:
 Start with generating plans files
 ```
 
-## Batch File Renamer | Initial CLI prompt example
+### Batch File Renamer | Initial CLI prompt example
 
 ```text
 Create a Python CLI that safely renames files in a user-selected directory using a prefix and sequential numbering.
@@ -164,7 +191,7 @@ Scope and safety:
 Start with generating plans files
 ```
 
-## Course Session Planner | Guided initial prompt example
+### Course Session Planner | Guided initial prompts example
 
 Send these prompts one at a time, responding to the agent between prompts. This keeps decisions manageable and lets the developer learn the tradeoffs before settling on a stack.
 
