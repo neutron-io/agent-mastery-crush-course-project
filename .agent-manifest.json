@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "agents": [
+    "copilot"
+  ],
+  "skills": {
+    "conventional-commits": {
+      "source": "neutron-io/agentics",
+      "sourceType": "github",
+      "skillPath": "skills/conventional-commits/SKILL.md",
+      "computedHash": "12379c1094c01d230b6b9f239aef6bda5a24af414f8a9ec1c8e3918e1868902c"
+    },
+    "git-commits": {
+      "source": "neutron-io/agentics",
+      "sourceType": "github",
+      "skillPath": "skills/git-commits/SKILL.md",
+      "computedHash": "9b68db0c146c1d995293c2edc98484450a16946a5c4198c005d7676d6e72418a"
+    },
+    "incremental-implementation": {
+      "source": "neutron-io/agentics",
+      "sourceType": "github",
+      "skillPath": "skills/incremental-implementation/SKILL.md",
+      "computedHash": "3b77129743f13e3734e1c83de67c37ca7f53bc428ba387b4a9d6fc81ddbc6438"
+    },
+    "incremental-planning": {
+      "source": "neutron-io/agentics",
+      "sourceType": "github",
+      "skillPath": "skills/incremental-planning/SKILL.md",
+      "computedHash": "0edcd9f57abf73bd33565ff42b6805eaeb84a6d13530326bab0dad4885a40574"
+    }
+  },
+  "prompts": {
+    "generate-plan.prompt.md": {
+      "source": "neutron-io/agentics",
+      "sourceType": "github",
+      "skillPath": "prompts/generate-plan.prompt.md",
+      "computedHash": "f20e920c7d358610e7871be3e19e2570c39a06625e984b7b873b4446b05aa128"
+    },
+    "pr-description.prompt.md": {
+      "source": "neutron-io/agentics",
+      "sourceType": "github",
+      "skillPath": "prompts/pr-description.prompt.md",
+      "computedHash": "2abb529df655d53abc6db99f6e452f494207aa767cd1b85e1160ab0d16d0d6d9"
+    },
+    "publish-pr.prompt.md": {
+      "source": "neutron-io/agentics",
+      "sourceType": "github",
+      "skillPath": "prompts/publish-pr.prompt.md",
+      "computedHash": "de4003fcdae79ba7ef14d054c020b1d49dcd211aea5318cb9cf6dd8d34087626"
+    }
+  }
+}
