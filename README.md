@@ -8,6 +8,7 @@
 - [Agent File Organizer | Initial desktop app prompt example](#agent-file-organizer--initial-desktop-app-prompt-example)
 - [Workspace Plan Assistant | Initial VS Code extension prompt example](#workspace-plan-assistant--initial-vs-code-extension-prompt-example)
 - [Batch File Renamer | Initial CLI prompt example](#batch-file-renamer--initial-cli-prompt-example)
+- [Course Session Planner | Guided initial prompt example](#course-session-planner--guided-initial-prompt-example)
 
 Join us to build a greenfield project from scratch and learn how to use and refine the instructions, skills, and prompts prepared for the workshop.
 
@@ -66,6 +67,7 @@ Core features:
 - Browse upcoming sessions and filter them by topic
 
 Scope and first steps:
+- Authentication: Not required; this is a single-user app with no accounts or sign-in
 - Store data locally; do not add accounts or a backend
 - Make the interface responsive and accessible
 
@@ -76,26 +78,28 @@ Start with generating plans files
 ## Agent File Organizer | Initial desktop app prompt example
 
 ```text
-Create a desktop MVP that uses an AI agent to help people organize files in a folder they select. Design it to support future iOS, Android, and web app clients.
+Create a desktop MVP that helps people organize files in a folder they select. Design it to support future iOS, Android, and web app clients.
 
 Purpose:
 - Suggest a useful folder structure and file organization while keeping the user in control.
 
 Tech stack:
-- Electron with React and Vite
-- 100% TypeScript
+- Tauri 2 with Svelte and Vite
+- TypeScript for the frontend and shared core logic; Rust only for native Tauri commands
 - ESLint and Prettier
-- Vitest for unit tests
-- Storybook for reusable UI components
+- Vitest for unit tests of shared logic
+- Storybook for reusable Svelte components
 
 Core features:
 - Let the user choose a folder with the native folder picker
 - Use file names, types, and dates to suggest groups without reading file contents
-- Show the agent's proposed moves and any name conflicts before applying changes
+- Show the app's proposed moves and any name conflicts before applying changes
 - Apply changes only after explicit approval, and support undoing the last operation
 
 Scope and safety:
+- Authentication: Not required; the app works locally without user accounts or sign-in
 - Keep core logic platform-independent and isolate platform-specific UI and file-system access so future clients can reuse it; build only the desktop app for now
+- No AI for the MVP; use deterministic local rules to suggest groups, with no AI service or backend
 - Limit file access to the folder selected by the user; do not upload files
 - Never modify files before the user approves the preview
 
@@ -122,6 +126,7 @@ Core features:
 - Save an approved plan under agent/plans/ and report the created file to the user
 
 Scope and safety:
+- Authentication: Do not implement extension-specific authentication; rely on VS Code and Copilot's existing sign-in and access requirements
 - Start with plan generation only; do not let the extension edit application source files
 - Read only relevant files in the active workspace and require approval before writing
 - Do not add a separate chat UI or connect to an external model provider
@@ -151,9 +156,53 @@ Core features:
 - Detect name collisions and never overwrite existing files
 
 Scope and safety:
+- Authentication: Not required; the CLI operates locally without user accounts or sign-in
 - Operate only on files directly in the specified directory
 - Keep preview as the default and return a nonzero exit code if a rename cannot be completed safely
 
 -------
 Start with generating plans files
+```
+
+## Course Session Planner | Guided initial prompt example
+
+Send these prompts one at a time, responding to the agent between prompts. This keeps decisions manageable and lets the developer learn the tradeoffs before settling on a stack.
+
+**1. Introduce the idea and ask for discovery questions**
+
+```text
+I want to build a web app for small teams to organize workshops and schedule course sessions. I'm new to choosing web technologies, so guide me through the early decisions in plain language.
+
+Don't choose a tech stack or write code yet. First, ask me one focused question at a time about the intended users, their main workflows, and what the first version needs to do. Help me keep the MVP small.
+```
+
+**2. Clarify requirements and compare suitable options**
+
+```text
+Based on what I've told you, summarize the users, core workflows, and MVP features. Call out any assumptions or unanswered questions, especially about authentication, shared access, and where data should be stored.
+
+Then recommend two or three suitable technology approaches. Explain the frontend, backend, and data-storage choices in beginner-friendly terms, including the tradeoffs and learning curve. Don't decide for me or write code.
+```
+
+**3. Explore free services and make decisions**
+
+```text
+For the options you recommended, identify relevant hosting, database, and authentication services with free tiers, if those services are needed for this MVP.
+
+Check current official pricing and documentation. Explain free-tier limits, what could require payment, and any important lock-in or privacy tradeoffs. Don't describe a service as free without verifying its current terms.
+
+Help me choose by asking one decision question at a time. Include whether this MVP actually needs accounts, a backend, or a hosted database. Summarize my choices and wait for my approval before locking them in.
+```
+
+**4. Create the agreed project prompt**
+
+```text
+Using the requirements and technical decisions I've approved, draft an initial project prompt with:
+- An introduction describing the app's goal and users
+- The selected tech stack and services
+- The core business logic and MVP features
+- Authentication, data-storage, privacy, and deployment decisions
+- Testing, accessibility, and out-of-scope items
+
+Use plain language, list remaining assumptions, and don't implement the app. First show me the draft for approval. After I approve it, start with generating plans files; do not start implementation until I approve a plan.
 ```
