@@ -4,6 +4,7 @@
 
 - [Bring an Idea](#bring-an-idea)
 - [Development Workflow](#development-workflow)
+- [Use the Workshop Template](#use-the-workshop-template)
 - [Initial prompts examples](#initial-prompts-examples)
 	- [Course Session Planner | Initial webapp prompt example](#course-session-planner--initial-webapp-prompt-example)
 	- [Figma Product Brief | Initial prompt for a designer and product manager](#figma-product-brief--initial-prompt-for-a-designer-and-product-manager)
@@ -45,6 +46,11 @@ Feel free to share your idea and discuss its scope. No detailed preparation is n
 	- Phase 1: approve the changes, then commit and push
 	- Phase 2: refine the changes, approve them, then commit and push
 	- Repeat the cycle for subsequent phases
+
+
+## Use the Workshop Template
+
+To create your own private copy of the workshop repository, follow the [template usage guide](docs/using-the-template.md).
 
 ## Initial prompts examples
 
