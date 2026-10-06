@@ -4,7 +4,7 @@ Follow these steps to create your own private repository for the workshop.
 
 ## Create Your Repository
 
-1. Sign in to GitHub with the account you will use for the workshop. Since the template repository is private, ask the organizer to grant this account access if needed.
+1. Sign in to GitHub with the account you will use for the workshop. The template repository is public, so you do not need an invitation to access it.
 2. Open the workshop template repository on GitHub and select **Use this template** > **Create a new repository**.
 3. Choose your own GitHub account as the owner, enter a repository name, and set the visibility to **Private**.
 4. Select **Create repository**.
